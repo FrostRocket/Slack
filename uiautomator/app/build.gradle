@@ -38,11 +38,13 @@ dependencies {
     compile 'com.googlecode.json-simple:json-simple:1.1'
 }
 
+// Gradle task to download APK, pointed to a made up Slack Jenkins host
 task downloadAPK(type: de.undercouch.gradle.tasks.download.Download) {
     src 'http://slackjenkins:8080/job/Android%20Master/lastStableBuild/artifact/Android/build/outputs/apk/Slack-normal-debug.apk'
     dest buildDir
 }
 
+// Gradle task to install the APK after it's downloaded. Useful for local or CI execution.
 task installAPK(type: Exec, dependsOn: 'downloadAPK') {
     commandLine android.getAdbExe().toString(), 'install', '-r', 'build/Slack-normal-debug.apk'
 }
