@@ -1,6 +1,8 @@
 package com.Slack.test.model;
 
 public class Timeout {
+    // This is only the max timeout value, tests will continue running
+    // as soon as the object is found.
     public static final int OBJECT_EXISTS = 20000;
 
     public static final int X_SHORT = 1000;

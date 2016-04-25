@@ -1,4 +1,3 @@
 <resources>
     <string name="app_name">Slack UIAutomation</string>
-    <string name="welcome_text">Welcome to Slack</string>
 </resources>

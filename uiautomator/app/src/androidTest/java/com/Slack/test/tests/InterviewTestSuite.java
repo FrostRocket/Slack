@@ -23,6 +23,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestRule;
 
+import java.util.UUID;
+
 import static org.junit.Assert.assertTrue;
 
 public class InterviewTestSuite {
@@ -49,15 +51,15 @@ public class InterviewTestSuite {
         AndroidUtils.clearData();
         SlackUtils.launchApp();
 
-        // assertTrue(launcherScreen.isVisible());
-
         launcherScreen.pressSignIn();
         loginScreen.setTeamNameURL("automationteam-group");
         loginScreen.pressNext();
         emailScreen.setEmail("mjgroves182@gmail.com");
         emailScreen.pressNext();
         passwordScreens.pressTypePassword();
-        passwordScreens.setPassword("slackinterview"); // Note: this would be obfuscated out
+
+        // Should use credentials imported from a properties file or via script parameters
+        passwordScreens.setPassword("slackinterview");
         passwordScreens.pressNext();
 
         assertTrue(homeScreen.isVisible());
@@ -65,12 +67,13 @@ public class InterviewTestSuite {
 
     @Before
     public void setUpTest() {
-        // Placeholder for startup operations
+        // Placeholder for anything done before each test
     }
 
     @Test
-    public void testStarMessage() {
-        String message = "Hi Slackbot!";
+    public void verifyStarMessageFilter() {
+        // Create a unique message using UUIDs so we don't accidentally select a duplicate message
+        String message = "Unique Message ID: " + UUID.randomUUID();
 
         homeScreen.pressOverlay();
         homeScreen.openSlackbotConversation();
@@ -83,17 +86,20 @@ public class InterviewTestSuite {
 
         assertTrue(searchScreen.hasMessage(message));
 
-        // At this point, since the mobile app doesn't have a star button, you would
-        // press the button and do the hasMessage verification again.
+        // Since the mobile app doesn't have a star filter, the following is sample code
+        // for the remaining task steps.
+
+        // homeScreen.pressStarButton();
+        // assertTrue(homeScreen.hasMessage(message));
     }
 
     @After
     public void tearDownTest() {
-        // Placeholder for test teardown operations
+        // Placeholder for anything done after each test
     }
 
     @AfterClass
     public static void tearDownSuite() {
-        // Placeholder for suite teardown operations
+        // Placeholder for anything done after the entire suite runs
     }
 }

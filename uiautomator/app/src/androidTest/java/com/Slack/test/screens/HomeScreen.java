@@ -65,6 +65,7 @@ public class HomeScreen extends BaseScreen {
     public void pressSendButton() {
         BySelector sendButton = By.res(Package.SLACK, "message_send_btn");
         mDevice.wait(Until.hasObject(sendButton), Timeout.OBJECT_EXISTS);
+        mDevice.waitForWindowUpdate(Package.SLACK, Timeout.MEDIUM);
         mDevice.findObject(sendButton).click();
     }
 
