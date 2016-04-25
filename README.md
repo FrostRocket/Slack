@@ -5,3 +5,5 @@
 3. Install a test or production build of Slack on your Android device.
 4. Open the Slack UIAutomator gradle project.
 5. Right click InterviewTestSuite.java and select “Run”.
+
+Runs on Android 5.0 (Lollipop) and above.
