@@ -2,12 +2,8 @@ package com.Slack.test.watchers;
 
 import android.util.Log;
 
-import com.Slack.test.utils.AndroidUtils;
-
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
-
-import java.util.Calendar;
 
 public class SlackTestWatcher extends TestWatcher {
 

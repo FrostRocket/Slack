@@ -4,7 +4,6 @@ import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.BySelector;
 import android.support.test.uiautomator.Until;
 
-import com.Slack.test.R;
 import com.Slack.test.model.Package;
 import com.Slack.test.model.Timeout;
 

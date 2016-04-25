@@ -2,7 +2,7 @@ package com.Slack.test.tests;
 
 import android.support.test.InstrumentationRegistry;
 import android.support.test.uiautomator.UiDevice;
-;
+
 import com.Slack.test.screens.EmailScreen;
 import com.Slack.test.screens.HomeScreen;
 import com.Slack.test.screens.LandingScreen;
@@ -26,6 +26,8 @@ import org.junit.rules.TestRule;
 import java.util.UUID;
 
 import static org.junit.Assert.assertTrue;
+
+;
 
 public class InterviewTestSuite {
 
